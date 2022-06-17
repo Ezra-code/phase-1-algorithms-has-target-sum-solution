@@ -1,17 +1,19 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
-  for(let i = 0; i < array.length; i++){
-    let diff = target - array[i]
-    console.log(diff)
-
-    for(let j = i + 1; j < array.length; j++){
-    // console.log(array[j])
-      if(array[j] === diff){
-        return true
+    // iterate over the array of numbers
+    for (let i = 0; i < array.length; i++) {
+      // for the current number, identify a complementary number that adds to our target
+      // (for example: if our number is 2, and the target is 5, the complementary number is 3)
+      const complement = target - array[i];
+      // iterate over the remaining numbers in the array
+      for (let j = i + 1; j < array.length; j++) {
+        // check if any of the remaining numbers is the complement
+        // if so, return true
+        if (array[j] === complement) return true;
       }
     }
-  }
-  return false
+    // if we reach the end of the array, return false
+    return false;
+  
 }
 
 /* 
@@ -20,6 +22,13 @@ function hasTargetSum(array, target) {
 
 /* 
   Add your pseudocode here
+  iterate over the array of numbers
+  for the current number, identify a complementary number that adds to our target
+  (for example: if our number is 2, and the target is 5, the complementary number is 3)
+  iterate over the remaining numbers in the array
+    check if any of the remaining numbers is the complement
+      if so, return true
+if we reach the end of the array, return false
 */
 
 /*
